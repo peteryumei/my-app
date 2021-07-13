@@ -1,37 +1,23 @@
-
-
-import React, { useState} from 'react';
-import Modal from 'react-modal';
-import logo from './logo.svg';
+import React from 'react';
+import { Route, BrowserRouter, Switch } from "react-router-dom";
+import Header from "./components/common/header";
+import Home from "./components/home/react-home";
+import ReactModal from "./components/demos/react-modal";
 import './App.css';
 
-Modal.setAppElement('#root')
+
 function App() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
-    <div className="App">
-      <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
-      <Modal 
-        isOpen={modalIsOpen} 
-        shouldCloseOnOverlayClick={true} 
-        onRequestClose={() => setModalIsOpen(false)} 
-        style={
-          {
-            overlay: {
-              backgroundColor: 'grey'
-            },
-            content: {
-              color:'orange'
-            }
-          }
-        }>
-        <h2>Modal Title</h2>
-        <p>Modal Body</p>
-        <div>
-          <button onClick={() => setModalIsOpen(false)}>Close</button>
-        </div>
-      </Modal>
+    <BrowserRouter>
+      <div className="container-fluid">
+      <Header />
+      <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/react-modal" component={ReactModal} />
+          <Route path="/react-bootstrap-modal" component={ReactModal} />/>
+        </Switch>
     </div>
+    </BrowserRouter>
   );
 }
 
