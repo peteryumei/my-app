@@ -6,7 +6,7 @@ Modal.setAppElement('#root')
 function ReactModal() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     return (
-      <div className="App">
+      <div className="jumbotron">
         <div>
         <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
         <Modal 
