@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import Modal from 'react-modal';
+import Button from 'react-bootstrap/Button';
 
 Modal.setAppElement('#root')
 
@@ -8,7 +9,7 @@ function ReactModal() {
     return (
       <div className="jumbotron">
         <div>
-        <button onClick={() => setModalIsOpen(true)}>Open Modal</button>
+        <Button onClick={() => setModalIsOpen(true)}>Open react-modal</Button>
         <Modal 
           isOpen={modalIsOpen} 
           shouldCloseOnOverlayClick={true} 
@@ -23,10 +24,10 @@ function ReactModal() {
               }
             }
           }>
-          <h2>Modal Title</h2>
+          <h4>Modal Title</h4>
           <p>Modal Body</p>
           <div>
-            <button onClick={() => setModalIsOpen(false)}>Close</button>
+            <Button variant="secondary" onClick={() => setModalIsOpen(false)}>Close</Button>
           </div>
         </Modal>
         </div>

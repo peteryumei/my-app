@@ -10,11 +10,11 @@ const Header = () => {
         </NavLink>
         {" | "}
         <NavLink to="/react-modal" activeStyle={activeStyle}>
-            react-modeal
+            react-modal
         </NavLink>
         {" | "}
         <NavLink to="/react-bootstrap-modal" activeStyle={activeStyle}>
-            react-bootstrap-modeal
+            react-bootstrap-modal
         </NavLink>
         </nav>
   );
